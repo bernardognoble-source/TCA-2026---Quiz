@@ -1,18 +1,24 @@
 class quiz{
-    this.perfil = ""
-    this.nivelAtual = "" 
+    perfil = ""
 
     jogar(){
         let materia = prompt("Escolha uma matéria. Para matemática, digite 0 e para português, digite 1")
         if(materia == 0) {
             this.comecarMatematica()
             let conteudoM = prompt("Escolha um nível, entre 1, 2, 3")
-        
+        }
+        else
+        {
+            this.comecarPortugues()
+            let conteudoP = prompt("Escolha um nível, entre 1, 2, 3")
         }
     }
     comecarMatematica(){
         let quest = new Questoes("matemática")
-  }
+    }
+    comecarPortugues(){
+        let quest = new Questoes("português")
+    }
 }
 
 class Questoes{
@@ -69,9 +75,58 @@ class Questoes{
                 resposta: alternativas[3]
             }
         ]
-    }
-    sortear(){
-        questao = Math.ceil(Math.random()*10)
+        this.listaPortugues = [
+            {
+                enunciado: `Questão 1: \nLeia a frase: "Embora estivesse cansada, Mariana continuou estudando para a prova." \nPor que Mariana continuou estudando?`,
+                alternativas: [`A) Porque não estava cansada.`, `B) Porque queria terminar a prova naquele momento.`, `C) Apesar de estar cansada, ela decidiu continuar estudando.`, `D) Porque já havia terminado de estudar.`, `E) Porque não precisava fazer a prova.`],            
+                resposta: alternativas[2]
+            },
+            {
+                enunciado: `Questâo 2: \nAssinale a alternativa em que todas as palavras estão escritas corretamente.`,
+                alternativas: [`A) Excessão, pesquisa, análise.`, `B) Exceção, pesquisa, análise.`, `C) Exceção, pesquiza, análize.`, `D) Excessão, pesquiza, análise.`, `E) Esceção, pesquisa, análize.`],
+                resposta: alternativas[1]
+            },
+            {
+                enunciado: `Questão 3: \nNa frase "O aluno estudou bastante para a prova", a palavra bastante indica:`,
+                alternativas: [`A) Um substantivo.`, `B) Uma ação.`, `C) Uma intensidade.`, `D) Uma característica física.`, `E) Um pronome pessoal.`],
+                resposta: alternativas[2]
+            },
+            {
+                enunciado: `Questão 4: \nAssinale a frase que apresenta concordância verbal correta.`,
+                alternativas: [`A) Os meninos brinca no parque.`, `B) As meninas chegou cedo.`, `C) Os professores explicaram a matéria.`, `D) Nós estudaram ontem.`, `E) Eles foi ao cinema.`],
+                resposta: alternativas[2]
+            },
+            {
+                enunciado: `Questão 5: \nComplete corretamente a frase: "Não fui à escola ______ estava doente."`,
+                alternativas: [`A) Por que`, `B) Por quê`, `C) Porque`, `D) Porquê`, `E) Porquê que`],
+                resposta: alternativas[2]
+            },
+            {
+                enunciado: `Questão 6: \nAssinale a alternativa com pontuação adequada.`,
+                alternativas: [`A) João compre pão leite e queijo.`, `B) João, compre pão, leite e queijo.`, `C) João compre, pão leite, e queijo.`, `D) João compre pão, leite e, queijo.`, `E) João compre pão leite, e queijo.`],
+                resposta: alternativas[1]
+            },
+            {
+                enunciado: `Questão 7: \nQual palavra tem o significado mais próximo de persistente?`,
+                alternativas: [`A) Desistente.`, `B) Determinado.`, `C) Desatento.`, `D) Indiferente.`, `E) Distraído.`],
+                resposta: alternativas[1]
+            },
+            {
+                enunciado: `Questão 8: \nNa frase "Nós viajaremos nas próximas férias", o verbo viajaremos está no:`,
+                alternativas: [`A) Presente do indicativo.`, `B) Pretérito perfeito.`, `C) Futuro do presente do indicativo.`, `D) Pretérito imperfeito.`, `E) Futuro do pretérito.`],
+                resposta: alternativas[2]
+            },
+            {
+                enunciado: `Questão 9: \nAssinale a alternativa que apresenta concordância nominal correta.`,
+                alternativas: [`A) As meninas estavam cansado.`, `B) Os alunos estavam preparada.`, `C) Os livros eram interessante.`, `D) A professora estava animados.`, `E) As casas eram bonitas.`],
+                resposta: alternativas[4]
+            },
+            {
+                enunciado: `Questão 10: \nLeia a frase: "Pedro estudou muito, portanto conseguiu uma boa nota." \nA palavra portanto expressa uma ideia de:`,
+                alternativas: [`A) Oposição.`, `B) Dúvida.`, `C) Comparação.`, `D) Conclusão.`, `E) Condição.`],
+                resposta: alternativas[3]
+            }
+        ]
     }
     
 }
