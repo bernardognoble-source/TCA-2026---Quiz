@@ -4,20 +4,30 @@ class quiz{
     jogar(){
         let materia = prompt("Escolha uma matéria. Para matemática, digite 0 e para português, digite 1")
         if(materia == 0) {
-            this.comecarMatematica()
-            let conteudoM = prompt("Escolha um nível, entre 1, 2, 3")
+            let conteudoM = prompt("Escolha um nível, entre 1, 2 e 3")
+            if(conteudoM == 1){
+                let quest = this.comecarMatematica()
+                console.log(quest[0].enuciado + "\n" + quest[0].alternativas.join("\n"))
+            }
         }
         else
         {
-            this.comecarPortugues()
-            let conteudoP = prompt("Escolha um nível, entre 1, 2, 3")
+            let conteudoP = prompt("Escolha um nível, entre 1, 2 e 3")
+            if(conteudoP == 1){
+                this.comecarPortugues()
+            }
         }
     }
     comecarMatematica(){
-        let quest = new Questoes("matemática")
+        // console.log('1')
+        let quest = new Questoes()
+        quest = quest.listaMatematica
+        return quest
     }
     comecarPortugues(){
-        let quest = new Questoes("português")
+        let quest = new Questoes()
+        quest = quest.listaPortugues
+        return quest
     }
 }
 
@@ -128,7 +138,6 @@ class Questoes{
             }
         ]
     }
-    
 }
 
 let jogo = new quiz()
