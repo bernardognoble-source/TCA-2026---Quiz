@@ -147,5 +147,5 @@ class Questoes{
 let jogo = new quiz()
 jogo.jogar()
 
- // git config --global user.email "bernardognoble@gmail.com"
- // git config --global user.name "Bernardo"
+  //git config --global user.email "bernardognoble@gmail.com"
+  //git config --global user.name "Bernardo"
