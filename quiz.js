@@ -2,42 +2,76 @@ class quiz{
     perfil = ""
 
     jogar(){
-        let materia = prompt("Escolha uma matéria. Para matemática, digite 0 e para português, digite 1")
-        if(materia == "0") {
+        let materia = prompt("Escolha uma matéria.\nMatemática\nPortuguês\nGeografia\nHistória\nFísica\nQuímica\nFilosofia")
+        if(materia == "matematica") {
             let conteudoM = prompt("Escolha um nível, entre 1, 2 e 3")
             if(conteudoM == "1"){
-                let quest = this.comecarMatematica()
-                let i = 0
-                while(i < quest.listaMatematica.length){
-                console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
-                i++
+                let quest = this.comecarMatematica1()
+                let acertosM = 0
+                for(let i = 0; i < quest.length; i++){
+                    console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                    let L = ['A', 'B', 'C', 'D', 'E']
+                    let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                    if(tentativa == 0||1||2||3||4){                                             //problema na verificacao de alternativas
+                    if(tentativa == quest[i].resposta){
+                        alert("Você acertou")
+                        acertosM++
+                    }
+                    else{
+                        alert("Você errou")
+                    }
+                    }
+                    else{
+                        alert("Essa alternativa não existe")
+                    }
                 }
+                alert("Você acertou "+acertosM+"/10")
             }
         }
-        else
-        {
+        if(materia == "portugues"){
             let conteudoP = prompt("Escolha um nível, entre 1, 2 e 3")
             if(conteudoP == 1){
-                let quest = this.comecarPortugues()
-                console.log(quest[0].enunciado + "\n" + quest[0].alternativas.join("\n"))
+                let quest = this.comecarPortugues1()
+                let acertosP = 0
+                for(let i = 0; i < quest.length; i++){
+                console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                let L = ['A', 'B', 'C', 'D', 'E']
+                let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                if(tentativa == "A"||"B"||"C"||"D"||"E"){
+                if(tentativa == quest[i].resposta){
+                    alert("Você acertou")
+                    acertosP++
+                }
+                else{
+                    alert("Você errou")
+                }
+                }
+                else{
+                    alert("Essa alternativa não existe")
+                }
+                }
+                alert("Você acertou "+acertosP+"/10")
             }
         }
     }
-    comecarMatematica(){
+    comecarMatematica1(){
         let quest = new Questoes()
-        quest = quest.listaMatematica
+        quest = quest.listaMatematica1
         return quest
     }
-    comecarPortugues(){
+    comecarPortugues1(){
         let quest = new Questoes()
-        quest = quest.listaPortugues
+        quest = quest.listaPortugues1
         return quest
+    }
+    letras(){
+
     }
 }
 
 class Questoes{
     constructor(){
-        this.listaMatematica = [
+        this.listaMatematica1 = [
             {
                 enunciado: 'Questão 1: \nUma loja de eletrônicos vendeu um smartphone por R$ 1.250,00 à vista. Se o cliente deu R$ 400,00 de entrada, qual é o valor restante a ser pago?',
                 alternativas: ['A) R$ 750,00', 'B) R$ 850,00', `C) R$ 900,00`, `D) R$ 950,00`, `E) R$ 1000,00`],
@@ -89,7 +123,7 @@ class Questoes{
                 resposta: 3
             }
         ]
-        this.listaPortugues = [
+        this.listaPortugues1 = [
             {
                 enunciado: `Questão 1: \nLeia a frase: "Embora estivesse cansada, Mariana continuou estudando para a prova." \nPor que Mariana continuou estudando?`,
                 alternativas: [`A) Porque não estava cansada.`, `B) Porque queria terminar a prova naquele momento.`, `C) Apesar de estar cansada, ela decidiu continuar estudando.`, `D) Porque já havia terminado de estudar.`, `E) Porque não precisava fazer a prova.`],            
@@ -147,5 +181,56 @@ class Questoes{
 let jogo = new quiz()
 jogo.jogar()
 
+
   //git config --global user.email "bernardognoble@gmail.com"
   //git config --global user.name "Bernardo"
+  {
+    enunciado:`Questão 1: \n`,
+    alternativas: [],
+    resposta:
+},
+{
+    enunciado:`Questão 2: \n`,
+    alternativas: [],
+    resposta:
+},
+{
+    enunciado:`Questão 3: \n`,
+    alternativas: [],
+    resposta:
+},
+{
+    enunciado:`Questão 4: \n`,
+    alternativas: [],
+    resposta:
+},
+{
+    enunciado:`Questão 5: \n`,
+    alternativas: [],
+    resposta:
+},
+{
+    enunciado:`Questão 6: \n`,
+    alternativas: [],
+    resposta:
+},
+{
+    enunciado:`Questão 7: \n`,
+    alternativas: [],
+    resposta:
+},
+{
+    enunciado:`Questão 8: \n`,
+    alternativas: [],
+    resposta:
+},
+{
+    enunciado:`Questão 9: \n`,
+    alternativas: [],
+    resposta:
+},
+{
+    enunciado:`Questão 10: \n`,
+    alternativas: [],
+    resposta:
+}   
