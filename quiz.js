@@ -1,76 +1,241 @@
-class quiz{
-    perfil = ""
+class quiz {
 
-    jogar(){
+    jogar() {
         let materia = prompt("Escolha uma matéria.\nMatemática\nPortuguês\nGeografia\nHistória\nFísica\nQuímica\nFilosofia")
-        if(materia == "matematica") {
+        if (materia == "matematica") {
             let conteudoM = prompt("Escolha um nível, entre 1, 2 e 3")
-            if(conteudoM == "1"){
+            if (conteudoM == "1") {
                 let quest = this.comecarMatematica1()
                 let acertosM = 0
-                for(let i = 0; i < quest.length; i++){
+                for (let i = 0; i < quest.length; i++) {
                     console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
                     let L = ['A', 'B', 'C', 'D', 'E']
                     let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
-                    if(tentativa == 0||1||2||3||4){                                             //problema na verificacao de alternativas
-                    if(tentativa == quest[i].resposta){
-                        alert("Você acertou")
-                        acertosM++
-                    }
-                    else{
-                        alert("Você errou")
-                    }
-                    }
-                    else{
+                    if (tentativa != -1) {
+                        if (tentativa == quest[i].resposta) {
+                            alert("Você acertou")
+                            acertosM++
+                        } else {
+                            alert("Você errou")
+                        }
+                    } else {
                         alert("Essa alternativa não existe")
                     }
                 }
-                alert("Você acertou "+acertosM+"/10")
+                alert("Você acertou " + acertosM + "/10")
             }
         }
-        if(materia == "portugues"){
-            let conteudoP = prompt("Escolha um nível, entre 1, 2 e 3")
-            if(conteudoP == 1){
+        if (materia == "portugues") {
+            let conteudoP = prompt("Escolha um nível, entre 1, Matematica2 e 3")
+            if (conteudoP == 1) {
                 let quest = this.comecarPortugues1()
                 let acertosP = 0
-                for(let i = 0; i < quest.length; i++){
-                console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
-                let L = ['A', 'B', 'C', 'D', 'E']
-                let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
-                if(tentativa == "A"||"B"||"C"||"D"||"E"){
-                if(tentativa == quest[i].resposta){
-                    alert("Você acertou")
-                    acertosP++
+                for (let i = 0; i < quest.length; i++) {
+                    console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                    let L = ['A', 'B', 'C', 'D', 'E']
+                    let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                    if (tentativa != -1) {
+                        if (tentativa == quest[i].resposta) {
+                            alert("Você acertou")
+                            acertosP++
+                        }
+                        else {
+                            alert("Você errou")
+                        }
+                    }
+                    else {
+                        alert("Essa alternativa não existe")
+                    }
                 }
-                else{
-                    alert("Você errou")
+                alert("Você acertou " + acertosP + "/10")
+            }
+        }
+        if (materia == "geografia") {
+            let conteudoG = prompt("Escolha um nível, entre 1, 2 e 3")
+            if (conteudoG == 1) {
+                let quest = this.comecarGeografia1()
+                let acertosG = 0
+                for (let i = 0; i < quest.length; i++) {
+                    console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                    let L = ['A', 'B', 'C', 'D', 'E']
+                    let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                    if (tentativa != -1) {
+                        if (tentativa == quest[i].resposta) {
+                            alert("Você acertou")
+                            acertosG++
+                        }
+                        else {
+                            alert("Você errou")
+                        }
+                    }
+                    else {
+                        alert("Essa alternativa não existe")
+                    }
                 }
+                alert("Você acertou " + acertosG + "/10")
+            }
+        }
+        if (materia == "historia") {
+            let conteudoH = prompt("Escolha um nível, entre 1, 2 e 3")
+            if (conteudoH == 1) {
+                let quest = this.comecarHistoria1()
+                let acertosH = 0
+                for (let i = 0; i < quest.length; i++) {
+                    console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                    let L = ['A', 'B', 'C', 'D', 'E']
+                    let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                    if (tentativa != -1) {
+                        if (tentativa == quest[i].resposta) {
+                            alert("Você acertou")
+                            acertosH++
+                        }
+                        else {
+                            alert("Você errou")
+                        }
+                    }
+                    else {
+                        alert("Essa alternativa não existe")
+                    }
                 }
-                else{
-                    alert("Essa alternativa não existe")
+                alert("Você acertou " + acertosH + "/10")
+            }
+        }
+        if (materia == "fisica") {
+            let conteudoFis = prompt("Escolha um nível, entre 1, 2 e 3")
+            if (conteudoFis == 1) {
+                let quest = this.comecarFisica1()
+                let acertosFis = 0
+                for (let i = 0; i < quest.length; i++) {
+                    console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                    let L = ['A', 'B', 'C', 'D', 'E']
+                    let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                    if (tentativa != -1) {
+                        if (tentativa == quest[i].resposta) {
+                            alert("Você acertou")
+                            acertosFis++
+                        }
+                        else {
+                            alert("Você errou")
+                        }
+                    }
+                    else {
+                        alert("Essa alternativa não existe")
+                    }
                 }
+                alert("Você acertou " + acertosFis + "/10")
+            }
+        }
+        if (materia == "quimica") {
+            let conteudoQ = prompt("Escolha um nível, entre 1, 2 e 3")
+            if (conteudoQ == 1) {
+                let quest = this.comecarQuimica1()
+                let acertosQ = 0
+                for (let i = 0; i < quest.length; i++) {
+                    console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                    let L = ['A', 'B', 'C', 'D', 'E']
+                    let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                    if (tentativa != -1) {
+                        if (tentativa == quest[i].resposta) {
+                            alert("Você acertou")
+                            acertosQ++
+                        }
+                        else {
+                            alert("Você errou")
+                        }
+                    }
+                    else {
+                        alert("Essa alternativa não existe")
+                    }
                 }
-                alert("Você acertou "+acertosP+"/10")
+                alert("Você acertou " + acertosQ + "/10")
+            }
+        }
+        if (materia == "filosofia") {
+            let conteudoFil = prompt("Escolha um nível, entre 1, 2 e 3")
+            if (conteudoFil == 1) {
+                let quest = this.comecarFilosofia1()
+                let acertosFil = 0
+                for (let i = 0; i < quest.length; i++) {
+                    console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                    let L = ['A', 'B', 'C', 'D', 'E']
+                    let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                    if (tentativa != -1) {
+                        if (tentativa == quest[i].resposta) {
+                            alert("Você acertou")
+                            acertosFil++
+                        }
+                        else {
+                            alert("Você errou")
+                        }
+                    }
+                    else {
+                        alert("Essa alternativa não existe")
+                    }
+                }
+                alert("Você acertou " + acertosFil + "/10")
             }
         }
     }
-    comecarMatematica1(){
+    comecarMatematica1() {
         let quest = new Questoes()
         quest = quest.listaMatematica1
         return quest
     }
-    comecarPortugues1(){
+    comecarPortugues1() {
         let quest = new Questoes()
         quest = quest.listaPortugues1
         return quest
     }
-    letras(){
-
+    comecarGeografia1() {
+        let quest = new Questoes()
+        quest = quest.listaGeografia1
+        return quest
+    }
+    comecarHistoria1() {
+        let quest = new Questoes()
+        quest = quest.listaHistoria1
+        return quest
+    }
+    comecarFisica1() {
+        let quest = new Questoes()
+        quest = quest.listaFisica1
+        return quest
+    }
+    comecarQuimica1() {
+        let quest = new Questoes()
+        quest = quest.listaQuimica1
+        return quest
+    }
+    comecarFilosofia1() {
+        let quest = new Questoes()
+        quest = quest.listaFilosofia1
+        return quest
     }
 }
 
-class Questoes{
-    constructor(){
+
+class Perfil {
+    constructor(nome, idade, materiaF){
+        this.nome = 
+        this.idade = 
+        this.materiaF = 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Questoes {
+    constructor() {
         this.listaMatematica1 = [
             {
                 enunciado: 'Questão 1: \nUma loja de eletrônicos vendeu um smartphone por R$ 1.250,00 à vista. Se o cliente deu R$ 400,00 de entrada, qual é o valor restante a ser pago?',
@@ -89,7 +254,7 @@ class Questoes{
             },
             {
                 enunciado: `Quetão 4: \nSe 3 operários constroem um muro em 12 dias, quantos dias seriam necessários para 6 operários fazerem o mesmo trabalho (mantendo o mesmo ritmo)?`,
-                alternativas: [`A) 4 dias`, `B) 6 dias`, `C) 8 dias`,`D) 18 dias`, `E) 24 dias`],
+                alternativas: [`A) 4 dias`, `B) 6 dias`, `C) 8 dias`, `D) 18 dias`, `E) 24 dias`],
                 resposta: 1
             },
             {
@@ -99,12 +264,12 @@ class Questoes{
             },
             {
                 enunciado: `Questão 6: \nUm estudante tirou as seguintes notas em suas quatro avaliações de matemática: 6, 7, 8 e 9. Qual foi a média final dele?`,
-                alternativas: [`A) 6,5`, `B) 7,0`, `B) 7,5`, `C) 8,0`, `D) 8,5`],
+                alternativas: [`A) 6,5`, `B) 7,0`, `C) 7,5`, `D) 8,0`, `E) 8,5`],
                 resposta: 2
             },
             {
                 enunciado: `Questão 7: \nQual é o valor da expressão matemática 5² + 3³?`,
-                alternativas: [`A) 31`, `B) 38`, `C) 52`,`D) 69`, `E) 125`],
+                alternativas: [`A) 31`, `B) 38`, `C) 52`, `D) 69`, `E) 125`],
                 resposta: 2
             },
             {
@@ -126,7 +291,7 @@ class Questoes{
         this.listaPortugues1 = [
             {
                 enunciado: `Questão 1: \nLeia a frase: "Embora estivesse cansada, Mariana continuou estudando para a prova." \nPor que Mariana continuou estudando?`,
-                alternativas: [`A) Porque não estava cansada.`, `B) Porque queria terminar a prova naquele momento.`, `C) Apesar de estar cansada, ela decidiu continuar estudando.`, `D) Porque já havia terminado de estudar.`, `E) Porque não precisava fazer a prova.`],            
+                alternativas: [`A) Porque não estava cansada.`, `B) Porque queria terminar a prova naquele momento.`, `C) Apesar de estar cansada, ela decidiu continuar estudando.`, `D) Porque já havia terminado de estudar.`, `E) Porque não precisava fazer a prova.`],
                 resposta: 2
             },
             {
@@ -182,55 +347,5 @@ let jogo = new quiz()
 jogo.jogar()
 
 
-  //git config --global user.email "bernardognoble@gmail.com"
-  //git config --global user.name "Bernardo"
-  {
-    enunciado:`Questão 1: \n`,
-    alternativas: [],
-    resposta:
-},
-{
-    enunciado:`Questão 2: \n`,
-    alternativas: [],
-    resposta:
-},
-{
-    enunciado:`Questão 3: \n`,
-    alternativas: [],
-    resposta:
-},
-{
-    enunciado:`Questão 4: \n`,
-    alternativas: [],
-    resposta:
-},
-{
-    enunciado:`Questão 5: \n`,
-    alternativas: [],
-    resposta:
-},
-{
-    enunciado:`Questão 6: \n`,
-    alternativas: [],
-    resposta:
-},
-{
-    enunciado:`Questão 7: \n`,
-    alternativas: [],
-    resposta:
-},
-{
-    enunciado:`Questão 8: \n`,
-    alternativas: [],
-    resposta:
-},
-{
-    enunciado:`Questão 9: \n`,
-    alternativas: [],
-    resposta:
-},
-{
-    enunciado:`Questão 10: \n`,
-    alternativas: [],
-    resposta:
-}   
+//git config --global user.email "bernardognoble@gmail.com"
+//git config --global user.name "Bernardo"
