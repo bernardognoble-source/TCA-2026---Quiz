@@ -1,6 +1,26 @@
 class quiz {
 
     jogar() {
+        let continuar = ''
+        while(continuar == 'nao'||'não'||'Nao'||'Não'){
+            let continuar = prompt("Deseja Continuar?")
+            if(continuar == 'sim'||'Sim'){
+                let perfilPergunta = prompt("Você já criou um perfil?")
+                if(perfilPergunta == "nao"||"não"||"Nao"||"Não"){
+                    let p = new Perfil()
+                    p.nome = prompt("Nome")
+                    p.idade = prompt("Idade")
+                    p.materiaF = prompt("Matéria Favorita")
+                } else {
+                    //seguir o menu
+                }
+            }
+        }
+        alert("Crie seu perfil")
+        let p = new Perfil()
+        p.nome = prompt("Nome")
+        p.idade = prompt("Idade")
+        p.materiaF = prompt("Matéria Favorita")
         let materia = prompt("Escolha uma matéria.\nMatemática\nPortuguês\nGeografia\nHistória\nFísica\nQuímica\nFilosofia")
         if (materia == "matematica") {
             let conteudoM = prompt("Escolha um nível, entre 1, 2 e 3")
@@ -20,6 +40,15 @@ class quiz {
                         }
                     } else {
                         alert("Essa alternativa não existe")
+                        let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                        if (tentativa != -1) {
+                            if (tentativa == quest[i].resposta) {
+                                alert("Você acertou")
+                                acertosM++
+                            } else {
+                                alert("Você errou")
+                            }
+                        }
                     }
                 }
                 alert("Você acertou " + acertosM + "/10")
@@ -45,6 +74,15 @@ class quiz {
                     }
                     else {
                         alert("Essa alternativa não existe")
+                        let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                        if (tentativa != -1) {
+                            if (tentativa == quest[i].resposta) {
+                                alert("Você acertou")
+                                acertosP++
+                            } else {
+                                alert("Você errou")
+                            }
+                        }
                     }
                 }
                 alert("Você acertou " + acertosP + "/10")
@@ -70,6 +108,15 @@ class quiz {
                     }
                     else {
                         alert("Essa alternativa não existe")
+                        let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                        if (tentativa != -1) {
+                            if (tentativa == quest[i].resposta) {
+                                alert("Você acertou")
+                                acertosG++
+                            } else {
+                                alert("Você errou")
+                            }
+                        }
                     }
                 }
                 alert("Você acertou " + acertosG + "/10")
@@ -95,6 +142,15 @@ class quiz {
                     }
                     else {
                         alert("Essa alternativa não existe")
+                        let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                        if (tentativa != -1) {
+                            if (tentativa == quest[i].resposta) {
+                                alert("Você acertou")
+                                acertosH++
+                            } else {
+                                alert("Você errou")
+                            }
+                        }
                     }
                 }
                 alert("Você acertou " + acertosH + "/10")
@@ -108,7 +164,7 @@ class quiz {
                 for (let i = 0; i < quest.length; i++) {
                     console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
                     let L = ['A', 'B', 'C', 'D', 'E']
-                    let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                    let tentativa = L.indexOf(prompt('Digite a alternativa').topromptUpperCase())
                     if (tentativa != -1) {
                         if (tentativa == quest[i].resposta) {
                             alert("Você acertou")
@@ -120,6 +176,15 @@ class quiz {
                     }
                     else {
                         alert("Essa alternativa não existe")
+                        let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                        if (tentativa != -1) {
+                            if (tentativa == quest[i].resposta) {
+                                alert("Você acertou")
+                                acertosFis++
+                            } else {
+                                alert("Você errou")
+                            }
+                        }
                     }
                 }
                 alert("Você acertou " + acertosFis + "/10")
@@ -129,7 +194,7 @@ class quiz {
             let conteudoQ = prompt("Escolha um nível, entre 1, 2 e 3")
             if (conteudoQ == 1) {
                 let quest = this.comecarQuimica1()
-                let acertosQ = 0
+                let acertosQ1 = 0
                 for (let i = 0; i < quest.length; i++) {
                     console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
                     let L = ['A', 'B', 'C', 'D', 'E']
@@ -137,7 +202,7 @@ class quiz {
                     if (tentativa != -1) {
                         if (tentativa == quest[i].resposta) {
                             alert("Você acertou")
-                            acertosQ++
+                            acertosQ1++
                         }
                         else {
                             alert("Você errou")
@@ -145,16 +210,25 @@ class quiz {
                     }
                     else {
                         alert("Essa alternativa não existe")
+                        let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                        if (tentativa != -1) {
+                            if (tentativa == quest[i].resposta) {
+                                alert("Você acertou")
+                                acertosQ1++
+                            } else {
+                                alert("Você errou")
+                            }
+                        }
                     }
                 }
-                alert("Você acertou " + acertosQ + "/10")
+                alert("Você acertou " + acertosQ1 + "/10")
             }
         }
         if (materia == "filosofia") {
             let conteudoFil = prompt("Escolha um nível, entre 1, 2 e 3")
             if (conteudoFil == 1) {
                 let quest = this.comecarFilosofia1()
-                let acertosFil = 0
+                let acertosFil1 = 0
                 for (let i = 0; i < quest.length; i++) {
                     console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
                     let L = ['A', 'B', 'C', 'D', 'E']
@@ -162,7 +236,7 @@ class quiz {
                     if (tentativa != -1) {
                         if (tentativa == quest[i].resposta) {
                             alert("Você acertou")
-                            acertosFil++
+                            acertosFil1++
                         }
                         else {
                             alert("Você errou")
@@ -170,12 +244,33 @@ class quiz {
                     }
                     else {
                         alert("Essa alternativa não existe")
+                        let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                        if (tentativa != -1) {
+                            if (tentativa == quest[i].resposta) {
+                                alert("Você acertou")
+                                acertosFil1++
+                            } else {
+                                alert("Você errou")
+                            }
+                        }
                     }
                 }
-                alert("Você acertou " + acertosFil + "/10")
+                alert("Você acertou " + acertosFil1 + "/10")
             }
         }
+        /*
+        p.mediaM = (acertosM1+acertosM2+acertosM3)/30
+        p.mediaP = (acertosP1+acertosP2+acertosP3)/30
+        p.mediaG = (acertosG1+acertosG2+acertosG3)/30
+        p.mediaH = (acertosH1+acertosH2+acertosH3)/30
+        p.mediaFis = (acertosFis1+acertosFis2+acertosFis3)/30
+        p.mediaQ = (acertosQ1+acertosQ2+acertosQ3)/30
+        p.mediaFil = (acertosFil1+acertosFil2+acertosFil3)/30
+        p.mediaGeral = (p.mediaM+p.mediaP+p.mediaG+p.mediaH+p.mediaFis+p.mediaQ+p.mediaFil)/210
+        */
     }
+
+    
     comecarMatematica1() {
         let quest = new Questoes()
         quest = quest.listaMatematica1
@@ -216,22 +311,19 @@ class quiz {
 
 class Perfil {
     constructor(nome, idade, materiaF){
-        this.nome = 
-        this.idade = 
-        this.materiaF = 
+        this.nome = nome
+        this.idade = idade
+        this.materiaF = materiaF
+        this.mediaM = 0
+        this.mediaP = 0
+        this.mediaG = 0
+        this.mediaH = 0
+        this.mediaFis = 0
+        this.mediaQ = 0
+        this.mediaFil = 0
+        this.mediaGeral = 0
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 class Questoes {
@@ -243,7 +335,7 @@ class Questoes {
                 resposta: 1
             },
             {
-                enunciado: `Questão 2: \nMaria comprou uma pizza inteira e a dividiu em 8 pedaços iguais. Se ela comeu 3 pedaços, qual fração da pizza sobrou?`,
+                enunciado: `Questão 2: \nMaria comprou uma pizza inteira e a dividiu em 8 pedaços iguais. Se ela comeu 3 pedaços, qual fração da pizza que sobrou?`,
                 alternativas: [`A) 3/8`, `B) 5/8`, `C) 2/7`, `D) 3/5`, `E) 1/8`],
                 resposta: 1
             },
@@ -264,7 +356,7 @@ class Questoes {
             },
             {
                 enunciado: `Questão 6: \nUm estudante tirou as seguintes notas em suas quatro avaliações de matemática: 6, 7, 8 e 9. Qual foi a média final dele?`,
-                alternativas: [`A) 6,5`, `B) 7,0`, `C) 7,5`, `D) 8,0`, `E) 8,5`],
+                alternativas: [`A) 6,7`, `B) 7,0`, `C) 7,5`, `D) 7,6`, `E) 8,5`],
                 resposta: 2
             },
             {
