@@ -1,4 +1,8 @@
 class quiz {
+    constructor(){
+        this.quest = new Questoes()
+    }
+
 
     jogar() {
 
@@ -12,41 +16,48 @@ class quiz {
         let acertosM1 = 0
         let acertosM2 = 0
         let acertosM3 = 0
+        let acertosM4 = 0
 
         let acertosP1 = 0
         let acertosP2 = 0
         let acertosP3 = 0
+        let acertosP4 = 0
 
         let acertosG1 = 0
         let acertosG2 = 0
         let acertosG3 = 0
+        let acertosG4 = 0
 
         let acertosH1 = 0
         let acertosH2 = 0
         let acertosH3 = 0
+        let acertosH4 = 0
 
         let acertosFis1 = 0
         let acertosFis2 = 0
         let acertosFis3 = 0
+        let acertosFis4 = 0
 
         let acertosQ1 = 0
         let acertosQ2 = 0
         let acertosQ3 = 0
+        let acertosQ4 = 0
 
         let acertosFil1 = 0
         let acertosFil2 = 0
         let acertosFil3 = 0
+        let acertosFil4 = 0
 
         let continuar = true
         while (continuar == true) {
-            let menu = prompt("Escolha uma opção:\n1 - Jogar\n2 - Ver Médias\n3 - Sair")
+            let menu = prompt("Escolha uma opção:\n1 - Jogar\n2 - Ver Médias\n3 - Adicionar Questão\n4 - Sair")
             if (menu == "1") {
                 let materia = prompt("Escolha uma matéria.\nMatemática\nPortuguês\nGeografia\nHistória\nFísica\nQuímica\nFilosofia")
                 if (materia) {
                     materia = materia.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
                 }
                 if (materia == "matematica") {
-                    let conteudoM = prompt("Escolha um nível, entre 1, 2 e 3")
+                    let conteudoM = prompt("Escolha um nível, entre 1, 2, 3 ou 4(questões adicionadas)")
                     if (conteudoM == "1") {
                         let quest = this.comecarMatematica1()
                         for (let i = 0; i < quest.length; i++) {
@@ -60,7 +71,7 @@ class quiz {
                                 } else {
                                     alert("Você errou")
                                 }
-                            } else {
+                            } else {       // sixseven67
                                 alert("Essa alternativa não existe")
                                 let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
                                 if (tentativa != -1) {
@@ -128,9 +139,36 @@ class quiz {
                             }
                         }
                         alert("Você acertou " + acertosM3 + "/10")
+                    } else if (conteudoM == "4") {
+                        let quest = this.comecarMatematica4()
+                        for (let i = 0; i < quest.length; i++) {
+                            console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                            let L = ['A', 'B', 'C', 'D', 'E']
+                            let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                            if (tentativa != -1) {
+                                if (tentativa == quest[i].resposta) {
+                                    alert("Você acertou")
+                                    acertosM4++
+                                } else {
+                                    alert("Você errou")
+                                }
+                            } else {
+                                alert("Essa alternativa não existe")
+                                let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                                if (tentativa != -1) {
+                                    if (tentativa == quest[i].resposta) {
+                                        alert("Você acertou")
+                                        acertosM4++
+                                    } else {
+                                        alert("Você errou")
+                                    }
+                                }
+                            }
+                        }
+                        alert("Você acertou " + acertosM4 + " questões")
                     }
                 } else if (materia == "portugues") {
-                    let conteudoP = prompt("Escolha um nível, entre 1, 2 e 3")
+                    let conteudoP = prompt("Escolha um nível, entre 1, 2, 3 ou 4(questões adicionadas)")
                     if (conteudoP == 1) {
                         let quest = this.comecarPortugues1()
                         for (let i = 0; i < quest.length; i++) {
@@ -218,9 +256,36 @@ class quiz {
                             }
                         }
                         alert("Você acertou " + acertosP3 + "/10")
+                    } else if (conteudoP == "4") {
+                        let quest = this.comecarPortugues4()
+                        for (let i = 0; i < quest.length; i++) {
+                            console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                            let L = ['A', 'B', 'C', 'D', 'E']
+                            let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                            if (tentativa != -1) {
+                                if (tentativa == quest[i].resposta) {
+                                    alert("Você acertou")
+                                    acertosP4++
+                                } else {
+                                    alert("Você errou")
+                                }
+                            } else {
+                                alert("Essa alternativa não existe")
+                                let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                                if (tentativa != -1) {
+                                    if (tentativa == quest[i].resposta) {
+                                        alert("Você acertou")
+                                        acertosP4++
+                                    } else {
+                                        alert("Você errou")
+                                    }
+                                }
+                            }
+                        }
+                        alert("Você acertou " + acertosP4 + " questões")
                     }
                 } else if (materia == "geografia") {
-                    let conteudoG = prompt("Escolha um nível, entre 1, 2 e 3")
+                    let conteudoG = prompt("Escolha um nível, entre 1, 2, 3 ou 4(questões adicionadas)")
                     if (conteudoG == 1) {
                         let quest = this.comecarGeografia1()
                         for (let i = 0; i < quest.length; i++) {
@@ -308,9 +373,36 @@ class quiz {
                             }
                         }
                         alert("Você acertou " + acertosG3 + "/10")
+                    } else if (conteudoG == "4") {
+                        let quest = this.comecarGeografia4()
+                        for (let i = 0; i < quest.length; i++) {
+                            console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                            let L = ['A', 'B', 'C', 'D', 'E']
+                            let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                            if (tentativa != -1) {
+                                if (tentativa == quest[i].resposta) {
+                                    alert("Você acertou")
+                                    acertosG4++
+                                } else {
+                                    alert("Você errou")
+                                }
+                            } else {
+                                alert("Essa alternativa não existe")
+                                let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                                if (tentativa != -1) {
+                                    if (tentativa == quest[i].resposta) {
+                                        alert("Você acertou")
+                                        acertosG4++
+                                    } else {
+                                        alert("Você errou")
+                                    }
+                                }
+                            }
+                        }
+                        alert("Você acertou " + acertosG4 + " questões")
                     }
                 } else if (materia == "historia") {
-                    let conteudoH = prompt("Escolha um nível, entre 1, 2 e 3")
+                    let conteudoH = prompt("Escolha um nível, entre 1, 2, 3 ou 4(questões adicionadas)")
                     if (conteudoH == 1) {
                         let quest = this.comecarHistoria1()
                         for (let i = 0; i < quest.length; i++) {
@@ -398,9 +490,36 @@ class quiz {
                             }
                         }
                         alert("Você acertou " + acertosH3 + "/10")
+                    } else if (conteudoH == "4") {
+                        let quest = this.comecarHistoria4()
+                        for (let i = 0; i < quest.length; i++) {
+                            console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                            let L = ['A', 'B', 'C', 'D', 'E']
+                            let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                            if (tentativa != -1) {
+                                if (tentativa == quest[i].resposta) {
+                                    alert("Você acertou")
+                                    acertosH4++
+                                } else {
+                                    alert("Você errou")
+                                }
+                            } else {
+                                alert("Essa alternativa não existe")
+                                let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                                if (tentativa != -1) {
+                                    if (tentativa == quest[i].resposta) {
+                                        alert("Você acertou")
+                                        acertosH4++
+                                    } else {
+                                        alert("Você errou")
+                                    }
+                                }
+                            }
+                        }
+                        alert("Você acertou " + acertosH4 + " questões")
                     }
                 } else if (materia == "fisica") {
-                    let conteudoFis = prompt("Escolha um nível, entre 1, 2 e 3")
+                    let conteudoFis = prompt("Escolha um nível, entre 1, 2, 3 ou 4(questões adicionadas)")
                     if (conteudoFis == 1) {
                         let quest = this.comecarFisica1()
                         for (let i = 0; i < quest.length; i++) {
@@ -488,9 +607,36 @@ class quiz {
                             }
                         }
                         alert("Você acertou " + acertosFis3 + "/10")
+                    } else if (conteudoFis == "4") {
+                        let quest = this.comecarFisica4()
+                        for (let i = 0; i < quest.length; i++) {
+                            console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                            let L = ['A', 'B', 'C', 'D', 'E']
+                            let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                            if (tentativa != -1) {
+                                if (tentativa == quest[i].resposta) {
+                                    alert("Você acertou")
+                                    acertosFis4++
+                                } else {
+                                    alert("Você errou")
+                                }
+                            } else {
+                                alert("Essa alternativa não existe")
+                                let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                                if (tentativa != -1) {
+                                    if (tentativa == quest[i].resposta) {
+                                        alert("Você acertou")
+                                        acertosFis4++
+                                    } else {
+                                        alert("Você errou")
+                                    }
+                                }
+                            }
+                        }
+                        alert("Você acertou " + acertosFis4 + " questões")
                     }
                 } else if (materia == "quimica") {
-                    let conteudoQ = prompt("Escolha um nível, entre 1, 2 e 3")
+                    let conteudoQ = prompt("Escolha um nível, entre 1, 2, 3 ou 4(questões adicionadas)")
                     if (conteudoQ == 1) {
                         let quest = this.comecarQuimica1()
                         for (let i = 0; i < quest.length; i++) {
@@ -578,9 +724,36 @@ class quiz {
                             }
                         }
                         alert("Você acertou " + acertosQ3 + "/10")
+                    } else if (conteudoQ == "4") {
+                        let quest = this.comecarQuimica4()
+                        for (let i = 0; i < quest.length; i++) {
+                            console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                            let L = ['A', 'B', 'C', 'D', 'E']
+                            let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                            if (tentativa != -1) {
+                                if (tentativa == quest[i].resposta) {
+                                    alert("Você acertou")
+                                    acertosQ4++
+                                } else {
+                                    alert("Você errou")
+                                }
+                            } else {
+                                alert("Essa alternativa não existe")
+                                let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                                if (tentativa != -1) {
+                                    if (tentativa == quest[i].resposta) {
+                                        alert("Você acertou")
+                                        acertosQ4++
+                                    } else {
+                                        alert("Você errou")
+                                    }
+                                }
+                            }
+                        }
+                        alert("Você acertou " + acertosQ4 + " questões")
                     }
                 } else if (materia == "filosofia") {
-                    let conteudoFil = prompt("Escolha um nível, entre 1, 2 e 3")
+                    let conteudoFil = prompt("Escolha um nível, entre 1, 2, 3 ou 4(questões adicionadas)")
                     if (conteudoFil == 1) {
                         let quest = this.comecarFilosofia1()
                         for (let i = 0; i < quest.length; i++) {
@@ -668,6 +841,33 @@ class quiz {
                             }
                         }
                         alert("Você acertou " + acertosFil3 + "/10")
+                    } else if (conteudoFil == "4") {
+                        let quest = this.comecarFilosofia4()
+                        for (let i = 0; i < quest.length; i++) {
+                            console.log(quest[i].enunciado + "\n" + quest[i].alternativas.join("\n"))
+                            let L = ['A', 'B', 'C', 'D', 'E']
+                            let tentativa = L.indexOf(prompt('Digite a alternativa').toUpperCase())
+                            if (tentativa != -1) {
+                                if (tentativa == quest[i].resposta) {
+                                    alert("Você acertou")
+                                    acertosFil4++
+                                } else {
+                                    alert("Você errou")
+                                }
+                            } else {
+                                alert("Essa alternativa não existe")
+                                let tentativa = L.indexOf(prompt('Digite uma alternativa existente').toUpperCase())
+                                if (tentativa != -1) {
+                                    if (tentativa == quest[i].resposta) {
+                                        alert("Você acertou")
+                                        acertosFil4++
+                                    } else {
+                                        alert("Você errou")
+                                    }
+                                }
+                            }
+                        }
+                        alert("Você acertou " + acertosFil4 + "questões")
                     }
                 }
 
@@ -738,6 +938,32 @@ class quiz {
                     alert("Média geral do aluno " + p.nome + "\nMédia Geral: " + p.mediaGeral)
                 }
             } else if (menu == "3") {
+                let materia = prompt("Digite a matéria que deseja adicionar uma questão: \nMatemática \nPortuguês \nGeografia \nHistória \nFísica \nQuímica \nFilosofia")
+                if (materia) {
+                    materia = materia.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                }
+                if (materia == "matematica") {
+                    this.quest.adicionarMatematica()
+                }
+                if (materia == "portugues") {
+                    this.quest.adicionarPortugues()
+                }
+                if (materia == "geografia") {
+                    this.quest.adicionarGeografia()
+                }
+                if (materia == "historia") { 
+                    this.quest.adicionarFisica()
+                }
+                if (materia == "fisica") {
+                    this.quest.adicionarFisica()
+                }
+                if (materia == "quimica") {
+                    this.quest.adicionarQuimica()
+                }
+                if (materia == "filosofia") {
+                    this.quest.adicionarFilosofia()
+                }
+            } else if (menu == "4") {
                 alert("Obrigado por jogar!")
                 continuar = false
             }
@@ -760,6 +986,10 @@ class quiz {
         quest = quest.listaMatematica3
         return quest
     }
+    comecarMatematica4(){
+        let quest = this.quest.listaMatematicaAdd
+        return quest
+    }
 
     comecarPortugues1() {
         let quest = new Questoes()
@@ -774,6 +1004,10 @@ class quiz {
     comecarPortugues3() {
         let quest = new Questoes()
         quest = quest.listaPortugues3
+        return quest
+    }
+    comecarPortugues4(){
+        let quest = this.quest.listaPortuguesAdd
         return quest
     }
 
@@ -792,6 +1026,10 @@ class quiz {
         quest = quest.listaGeografia3
         return quest
     }
+    comecarGeografia4(){
+        let quest = this.quest.listaGeografiaAdd
+        return quest
+    }
 
     comecarHistoria1() {
         let quest = new Questoes()
@@ -806,6 +1044,10 @@ class quiz {
     comecarHistoria3() {
         let quest = new Questoes()
         quest = quest.listaHistoria3
+        return quest
+    }
+    comecarHistoria4(){
+        let quest = this.quest.listaHistoriaAdd
         return quest
     }
 
@@ -824,6 +1066,10 @@ class quiz {
         quest = quest.listaFisica3
         return quest
     }
+    comecarFisica4(){
+        let quest = this.quest.listaFisicaAdd
+        return quest
+    }
 
     comecarQuimica1() {
         let quest = new Questoes()
@@ -840,6 +1086,10 @@ class quiz {
         quest = quest.listaQuimica3
         return quest
     }
+    comecarQuimica4(){
+        let quest = this.quest.listaQuimicaAdd
+        return quest
+    }
 
     comecarFilosofia1() {
         let quest = new Questoes()
@@ -854,6 +1104,10 @@ class quiz {
     comecarFilosofia3() {
         let quest = new Questoes()
         quest = quest.listaFilosofia3
+        return quest
+    }
+    comecarFilosofia4(){
+        let quest = this.quest.listaFilosofiaAdd
         return quest
     }
 
@@ -1997,9 +2251,170 @@ class Questoes {
                 resposta: 2
             }
         ]
+        this.listaMatematicaAdd = [
+
+        ]
+        this.listaPortuguesAdd = [
+
+        ]
+        this.listaGeografiaAdd = [
+
+        ]
+        this.listaHistoriaAdd = [
+
+        ]
+        this.listaFisicaAdd = [
+
+        ]
+        this.listaQuimicaAdd = [
+
+        ]
+        this.listaFilosofiaAdd = [
+
+        ]
+    }
+    adicionarMatematica(){
+        let quest = {
+            enunciado: "Questão:\n",
+            alternativas: [],
+            resposta: -1
+        }
+        quest.enunciado = quest.enunciado + prompt("Digite apenas o enunciado da sua questão")
+        let alternativa1 = prompt("Digite a alternativa A da sua questão(modelo: A) (alternativa))")
+        let alternativa2 = prompt("Digite a alternativa B da sua questão(modelo: B) (alternativa))")
+        let alternativa3 = prompt("Digite a alternativa C da sua questão(modelo: C) (alternativa))")
+        let alternativa4 = prompt("Digite a alternativa D da sua questão(modelo: D) (alternativa))")
+        let alternativa5 = prompt("Digite a alternativa E da sua questão(modelo: E) (alternativa))")
+        quest.alternativas.push(alternativa1)
+        quest.alternativas.push(alternativa2)
+        quest.alternativas.push(alternativa3)
+        quest.alternativas.push(alternativa4)
+        quest.alternativas.push(alternativa5)
+        quest.resposta = prompt("Digite a resposta da sua questão(A = 0, B = 1, C = 2, D = 3, E = 4)")
+        this.listaMatematicaAdd.push(quest)
+    }
+    adicionarPortugues(){
+        let quest = {
+            enunciado: "Questão:\n",
+            alternativas: [],
+            resposta: -1
+        }
+        quest.enunciado = quest.enunciado + prompt("Digite apenas o enunciado da sua questão")
+        let alternativa1 = prompt("Digite a alternativa A da sua questão(modelo: A) (alternativa))")
+        let alternativa2 = prompt("Digite a alternativa B da sua questão(modelo: B) (alternativa))")
+        let alternativa3 = prompt("Digite a alternativa C da sua questão(modelo: C) (alternativa))")
+        let alternativa4 = prompt("Digite a alternativa D da sua questão(modelo: D) (alternativa))")
+        let alternativa5 = prompt("Digite a alternativa E da sua questão(modelo: E) (alternativa))")
+        quest.alternativas.push(alternativa1)
+        quest.alternativas.push(alternativa2)
+        quest.alternativas.push(alternativa3)
+        quest.alternativas.push(alternativa4)
+        quest.alternativas.push(alternativa5)
+        quest.resposta = prompt("Digite a resposta da sua questão(A = 0, B = 1, C = 2, D = 3, E = 4)")
+        this.listaPortuguesAdd.push(quest)
+    }
+    adicionarGeografia(){
+        let quest = {
+            enunciado: "Questão:\n",
+            alternativas: [],
+            resposta: -1
+        }
+        quest.enunciado = quest.enunciado + prompt("Digite apenas o enunciado da sua questão")
+        let alternativa1 = prompt("Digite a alternativa A da sua questão(modelo: A) (alternativa))")
+        let alternativa2 = prompt("Digite a alternativa B da sua questão(modelo: B) (alternativa))")
+        let alternativa3 = prompt("Digite a alternativa C da sua questão(modelo: C) (alternativa))")
+        let alternativa4 = prompt("Digite a alternativa D da sua questão(modelo: D) (alternativa))")
+        let alternativa5 = prompt("Digite a alternativa E da sua questão(modelo: E) (alternativa))")
+        quest.alternativas.push(alternativa1)
+        quest.alternativas.push(alternativa2)
+        quest.alternativas.push(alternativa3)
+        quest.alternativas.push(alternativa4)
+        quest.alternativas.push(alternativa5)
+        quest.resposta = prompt("Digite a resposta da sua questão(A = 0, B = 1, C = 2, D = 3, E = 4)")
+        this.listaGeografiaAdd.push(quest)
+    }
+    adicionarHistoria(){
+        let quest = {
+            enunciado: "Questão:\n",
+            alternativas: [],
+            resposta: -1
+        }
+        quest.enunciado = quest.enunciado + prompt("Digite apenas o enunciado da sua questão")
+        let alternativa1 = prompt("Digite a alternativa A da sua questão(modelo: A) (alternativa))")
+        let alternativa2 = prompt("Digite a alternativa B da sua questão(modelo: B) (alternativa))")
+        let alternativa3 = prompt("Digite a alternativa C da sua questão(modelo: C) (alternativa))")
+        let alternativa4 = prompt("Digite a alternativa D da sua questão(modelo: D) (alternativa))")
+        let alternativa5 = prompt("Digite a alternativa E da sua questão(modelo: E) (alternativa))")
+        quest.alternativas.push(alternativa1)
+        quest.alternativas.push(alternativa2)
+        quest.alternativas.push(alternativa3)
+        quest.alternativas.push(alternativa4)
+        quest.alternativas.push(alternativa5)
+        quest.resposta = prompt("Digite a resposta da sua questão(A = 0, B = 1, C = 2, D = 3, E = 4)")
+        this.listaHistoriaAdd.push(quest)
+    }
+    adicionarFisica(){
+        let quest = {
+            enunciado: "Questão:\n",
+            alternativas: [],
+            resposta: -1
+        }
+        quest.enunciado = quest.enunciado + prompt("Digite apenas o enunciado da sua questão")
+        let alternativa1 = prompt("Digite a alternativa A da sua questão(modelo: A) (alternativa))")
+        let alternativa2 = prompt("Digite a alternativa B da sua questão(modelo: B) (alternativa))")
+        let alternativa3 = prompt("Digite a alternativa C da sua questão(modelo: C) (alternativa))")
+        let alternativa4 = prompt("Digite a alternativa D da sua questão(modelo: D) (alternativa))")
+        let alternativa5 = prompt("Digite a alternativa E da sua questão(modelo: E) (alternativa))")
+        quest.alternativas.push(alternativa1)
+        quest.alternativas.push(alternativa2)
+        quest.alternativas.push(alternativa3)
+        quest.alternativas.push(alternativa4)
+        quest.alternativas.push(alternativa5)
+        quest.resposta = prompt("Digite a resposta da sua questão(A = 0, B = 1, C = 2, D = 3, E = 4)")
+        this.listaFisicaAdd.push(quest)
+    }
+    adicionarQuimica(){
+        let quest = {
+            enunciado: "Questão:\n",
+            alternativas: [],
+            resposta: -1
+        }
+        quest.enunciado = quest.enunciado + prompt("Digite apenas o enunciado da sua questão")
+        let alternativa1 = prompt("Digite a alternativa A da sua questão(modelo: A) (alternativa))")
+        let alternativa2 = prompt("Digite a alternativa B da sua questão(modelo: B) (alternativa))")
+        let alternativa3 = prompt("Digite a alternativa C da sua questão(modelo: C) (alternativa))")
+        let alternativa4 = prompt("Digite a alternativa D da sua questão(modelo: D) (alternativa))")
+        let alternativa5 = prompt("Digite a alternativa E da sua questão(modelo: E) (alternativa))")
+        quest.alternativas.push(alternativa1)
+        quest.alternativas.push(alternativa2)
+        quest.alternativas.push(alternativa3)
+        quest.alternativas.push(alternativa4)
+        quest.alternativas.push(alternativa5)
+        quest.resposta = prompt("Digite a resposta da sua questão(A = 0, B = 1, C = 2, D = 3, E = 4)")
+        this.listaQuimicaAdd.push(quest)
+    }
+    adicionarFilosofia(){
+        let quest = {
+            enunciado: "Questão:\n",
+            alternativas: [],
+            resposta: -1
+        }
+        quest.enunciado = quest.enunciado + prompt("Digite apenas o enunciado da sua questão")
+        let alternativa1 = prompt("Digite a alternativa A da sua questão(modelo: A) (alternativa))")
+        let alternativa2 = prompt("Digite a alternativa B da sua questão(modelo: B) (alternativa))")
+        let alternativa3 = prompt("Digite a alternativa C da sua questão(modelo: C) (alternativa))")
+        let alternativa4 = prompt("Digite a alternativa D da sua questão(modelo: D) (alternativa))")
+        let alternativa5 = prompt("Digite a alternativa E da sua questão(modelo: E) (alternativa))")
+        quest.alternativas.push(alternativa1)
+        quest.alternativas.push(alternativa2)
+        quest.alternativas.push(alternativa3)
+        quest.alternativas.push(alternativa4)
+        quest.alternativas.push(alternativa5)
+        quest.resposta = prompt("Digite a resposta da sua questão(A = 0, B = 1, C = 2, D = 3, E = 4)")
+        this.listaFilosofiaAdd.push(quest)
     }
 }
 
 
 let jogo = new quiz()
-jogo.jogar()
+jogo.jogar() 
